@@ -1,7 +1,9 @@
 --------------------
 AjaxLogin
 --------------------
-Author: John Doe <john@doe.com>
+Authors:
+    Sergei Peleskov <info@s1temaker.ru>
+    Artem Ujakov <>
 --------------------
 
-A basic Extra for MODx Revolution.
+Login + Ajax Extra for MODx Revolution.

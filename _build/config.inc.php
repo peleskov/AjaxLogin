@@ -18,16 +18,16 @@ return [
     // Which elements should be updated on package upgrade
     'update' => [
         'chunks' => true,
-        'menus' => true,
-        'permission' => true,
+        'menus' => false,
+        'permission' => false,
         'plugins' => true,
-        'policies' => true,
-        'policy_templates' => true,
+        'policies' => false,
+        'policy_templates' => false,
         'resources' => false,
         'settings' => true,
         'snippets' => true,
         'templates' => true,
-        'widgets' => true,
+        'widgets' => false,
     ],
     // Which elements should be static by default
     'static' => [
