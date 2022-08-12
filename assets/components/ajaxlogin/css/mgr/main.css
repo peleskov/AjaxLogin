@@ -1,0 +1,96 @@
+/* Grid */
+.ajaxlogin-ajaxlogin-row-disabled { font-style: italic; opacity: .6; color: #555; }
+.x-grid3-col-actions { padding: 3px 0 3px 5px; }
+
+/* Actions */
+.action-red { color: darkred !important; }
+.action-green { color: darkgreen !important; }
+.action-blue { color: cadetblue !important; }
+.action-yellow { color: goldenrod !important; }
+.action-gray { color: dimgray !important; }
+ul.ajaxlogin-row-actions { margin: 0; padding: 0; list-style: none; }
+ul.ajaxlogin-row-actions li { float: left; }
+ul.ajaxlogin-row-actions .ajaxlogin-btn { padding: 5px; margin-right: 2px; min-width: 26px; font-size: inherit; }
+
+/* Action menu */
+a.x-menu-item .x-menu-item-text, a.x-menu-item .x-menu-item-text .icon { cursor: pointer; }
+a.x-menu-item .x-menu-item-text .icon { line-height: 16px; top: auto; }
+.x-menu-list .icon { min-width: 1em; text-align: center; }
+.x-menu-list-item:hover .icon { color: inherit !important; }
+ul.ajaxlogin-row-actions .actions-menu { width: 40px; }
+ul.ajaxlogin-row-actions .actions-menu:after { content: " \f107"; }
+
+/* Search field */
+.x-field-search-clear,
+.x-field-search-go { border-left: 1px solid #e4e4e4 !important; }
+.x-field-search-clear:hover,
+.x-field-search-go:hover { border-left-color: transparent !important; }
+.x-field-search-clear:before { content: '\f00d' !important; }
+.x-field-search-go { right: 31px !important; border-radius: 0 !important; }
+.x-field-search-go:before { content: '\f002' !important; }
+
+/* Buttons */
+.ajaxlogin-btn { display: inline-block; margin-bottom: 0; font-weight: normal; text-align: center; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation; cursor: pointer; background-image: none; border: 1px solid transparent; white-space: nowrap; padding: 6px 12px; font-size: 14px; line-height: 1.42857143; border-radius: 4px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none }
+.ajaxlogin-btn:focus, .ajaxlogin-btn:active:focus, .ajaxlogin-btn.active:focus, .ajaxlogin-btn.focus, .ajaxlogin-btn:active.focus, .ajaxlogin-btn.active.focus { outline: thin dotted; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px }
+.ajaxlogin-btn:hover, .ajaxlogin-btn:focus, .ajaxlogin-btn.focus { color: #333; text-decoration: none }
+.ajaxlogin-btn:active, .ajaxlogin-btn.active { outline: 0; background-image: none; -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) }
+.ajaxlogin-btn.disabled, .ajaxlogin-btn[disabled], fieldset[disabled] .ajaxlogin-btn { cursor: not-allowed; opacity: .65; filter: alpha(opacity=65); -webkit-box-shadow: none; box-shadow: none }
+a.ajaxlogin-btn.disabled, fieldset[disabled] a.ajaxlogin-btn { pointer-events: none }
+.ajaxlogin-btn-default { color: #333; background-color: #fff; border-color: #ccc }
+.ajaxlogin-btn-default:focus, .ajaxlogin-btn-default.focus { color: #333; background-color: #e6e6e6; border-color: #8c8c8c }
+.ajaxlogin-btn-default:hover { color: #333; background-color: #e6e6e6; border-color: #adadad }
+.ajaxlogin-btn-default:active, .ajaxlogin-btn-default.active, .open > .dropdown-toggle.ajaxlogin-btn-default { color: #333; background-color: #e6e6e6; border-color: #adadad }
+.ajaxlogin-btn-default:active:hover, .ajaxlogin-btn-default.active:hover, .open > .dropdown-toggle.ajaxlogin-btn-default:hover, .ajaxlogin-btn-default:active:focus, .ajaxlogin-btn-default.active:focus, .open > .dropdown-toggle.ajaxlogin-btn-default:focus, .ajaxlogin-btn-default:active.focus, .ajaxlogin-btn-default.active.focus, .open > .dropdown-toggle.ajaxlogin-btn-default.focus { color: #333; background-color: #d4d4d4; border-color: #8c8c8c }
+.ajaxlogin-btn-default:active, .ajaxlogin-btn-default.active, .open > .dropdown-toggle.ajaxlogin-btn-default { background-image: none }
+.ajaxlogin-btn-default.disabled:hover, .ajaxlogin-btn-default[disabled]:hover, fieldset[disabled] .ajaxlogin-btn-default:hover, .ajaxlogin-btn-default.disabled:focus, .ajaxlogin-btn-default[disabled]:focus, fieldset[disabled] .ajaxlogin-btn-default:focus, .ajaxlogin-btn-default.disabled.focus, .ajaxlogin-btn-default[disabled].focus, fieldset[disabled] .ajaxlogin-btn-default.focus { background-color: #fff; border-color: #ccc }
+.ajaxlogin-btn-default .badge { color: #fff; background-color: #333 }
+.ajaxlogin-btn-primary { color: #fff; background-color: #337ab7; border-color: #2e6da4 }
+.ajaxlogin-btn-primary:focus, .ajaxlogin-btn-primary.focus { color: #fff; background-color: #286090; border-color: #122b40 }
+.ajaxlogin-btn-primary:hover { color: #fff; background-color: #286090; border-color: #204d74 }
+.ajaxlogin-btn-primary:active, .ajaxlogin-btn-primary.active, .open > .dropdown-toggle.ajaxlogin-btn-primary { color: #fff; background-color: #286090; border-color: #204d74 }
+.ajaxlogin-btn-primary:active:hover, .ajaxlogin-btn-primary.active:hover, .open > .dropdown-toggle.ajaxlogin-btn-primary:hover, .ajaxlogin-btn-primary:active:focus, .ajaxlogin-btn-primary.active:focus, .open > .dropdown-toggle.ajaxlogin-btn-primary:focus, .ajaxlogin-btn-primary:active.focus, .ajaxlogin-btn-primary.active.focus, .open > .dropdown-toggle.ajaxlogin-btn-primary.focus { color: #fff; background-color: #204d74; border-color: #122b40 }
+.ajaxlogin-btn-primary:active, .ajaxlogin-btn-primary.active, .open > .dropdown-toggle.ajaxlogin-btn-primary { background-image: none }
+.ajaxlogin-btn-primary.disabled:hover, .ajaxlogin-btn-primary[disabled]:hover, fieldset[disabled] .ajaxlogin-btn-primary:hover, .ajaxlogin-btn-primary.disabled:focus, .ajaxlogin-btn-primary[disabled]:focus, fieldset[disabled] .ajaxlogin-btn-primary:focus, .ajaxlogin-btn-primary.disabled.focus, .ajaxlogin-btn-primary[disabled].focus, fieldset[disabled] .ajaxlogin-btn-primary.focus { background-color: #337ab7; border-color: #2e6da4 }
+.ajaxlogin-btn-primary .badge { color: #337ab7; background-color: #fff }
+.ajaxlogin-btn-success { color: #fff; background-color: #5cb85c; border-color: #4cae4c }
+.ajaxlogin-btn-success:focus, .ajaxlogin-btn-success.focus { color: #fff; background-color: #449d44; border-color: #255625 }
+.ajaxlogin-btn-success:hover { color: #fff; background-color: #449d44; border-color: #398439 }
+.ajaxlogin-btn-success:active, .ajaxlogin-btn-success.active, .open > .dropdown-toggle.ajaxlogin-btn-success { color: #fff; background-color: #449d44; border-color: #398439 }
+.ajaxlogin-btn-success:active:hover, .ajaxlogin-btn-success.active:hover, .open > .dropdown-toggle.ajaxlogin-btn-success:hover, .ajaxlogin-btn-success:active:focus, .ajaxlogin-btn-success.active:focus, .open > .dropdown-toggle.ajaxlogin-btn-success:focus, .ajaxlogin-btn-success:active.focus, .ajaxlogin-btn-success.active.focus, .open > .dropdown-toggle.ajaxlogin-btn-success.focus { color: #fff; background-color: #398439; border-color: #255625 }
+.ajaxlogin-btn-success:active, .ajaxlogin-btn-success.active, .open > .dropdown-toggle.ajaxlogin-btn-success { background-image: none }
+.ajaxlogin-btn-success.disabled:hover, .ajaxlogin-btn-success[disabled]:hover, fieldset[disabled] .ajaxlogin-btn-success:hover, .ajaxlogin-btn-success.disabled:focus, .ajaxlogin-btn-success[disabled]:focus, fieldset[disabled] .ajaxlogin-btn-success:focus, .ajaxlogin-btn-success.disabled.focus, .ajaxlogin-btn-success[disabled].focus, fieldset[disabled] .ajaxlogin-btn-success.focus { background-color: #5cb85c; border-color: #4cae4c }
+.ajaxlogin-btn-success .badge { color: #5cb85c; background-color: #fff }
+.ajaxlogin-btn-info { color: #fff; background-color: #5bc0de; border-color: #46b8da }
+.ajaxlogin-btn-info:focus, .ajaxlogin-btn-info.focus { color: #fff; background-color: #31b0d5; border-color: #1b6d85 }
+.ajaxlogin-btn-info:hover { color: #fff; background-color: #31b0d5; border-color: #269abc }
+.ajaxlogin-btn-info:active, .ajaxlogin-btn-info.active, .open > .dropdown-toggle.ajaxlogin-btn-info { color: #fff; background-color: #31b0d5; border-color: #269abc }
+.ajaxlogin-btn-info:active:hover, .ajaxlogin-btn-info.active:hover, .open > .dropdown-toggle.ajaxlogin-btn-info:hover, .ajaxlogin-btn-info:active:focus, .ajaxlogin-btn-info.active:focus, .open > .dropdown-toggle.ajaxlogin-btn-info:focus, .ajaxlogin-btn-info:active.focus, .ajaxlogin-btn-info.active.focus, .open > .dropdown-toggle.ajaxlogin-btn-info.focus { color: #fff; background-color: #269abc; border-color: #1b6d85 }
+.ajaxlogin-btn-info:active, .ajaxlogin-btn-info.active, .open > .dropdown-toggle.ajaxlogin-btn-info { background-image: none }
+.ajaxlogin-btn-info.disabled:hover, .ajaxlogin-btn-info[disabled]:hover, fieldset[disabled] .ajaxlogin-btn-info:hover, .ajaxlogin-btn-info.disabled:focus, .ajaxlogin-btn-info[disabled]:focus, fieldset[disabled] .ajaxlogin-btn-info:focus, .ajaxlogin-btn-info.disabled.focus, .ajaxlogin-btn-info[disabled].focus, fieldset[disabled] .ajaxlogin-btn-info.focus { background-color: #5bc0de; border-color: #46b8da }
+.ajaxlogin-btn-info .badge { color: #5bc0de; background-color: #fff }
+.ajaxlogin-btn-warning { color: #fff; background-color: #f0ad4e; border-color: #eea236 }
+.ajaxlogin-btn-warning:focus, .ajaxlogin-btn-warning.focus { color: #fff; background-color: #ec971f; border-color: #985f0d }
+.ajaxlogin-btn-warning:hover { color: #fff; background-color: #ec971f; border-color: #d58512 }
+.ajaxlogin-btn-warning:active, .ajaxlogin-btn-warning.active, .open > .dropdown-toggle.ajaxlogin-btn-warning { color: #fff; background-color: #ec971f; border-color: #d58512 }
+.ajaxlogin-btn-warning:active:hover, .ajaxlogin-btn-warning.active:hover, .open > .dropdown-toggle.ajaxlogin-btn-warning:hover, .ajaxlogin-btn-warning:active:focus, .ajaxlogin-btn-warning.active:focus, .open > .dropdown-toggle.ajaxlogin-btn-warning:focus, .ajaxlogin-btn-warning:active.focus, .ajaxlogin-btn-warning.active.focus, .open > .dropdown-toggle.ajaxlogin-btn-warning.focus { color: #fff; background-color: #d58512; border-color: #985f0d }
+.ajaxlogin-btn-warning:active, .ajaxlogin-btn-warning.active, .open > .dropdown-toggle.ajaxlogin-btn-warning { background-image: none }
+.ajaxlogin-btn-warning.disabled:hover, .ajaxlogin-btn-warning[disabled]:hover, fieldset[disabled] .ajaxlogin-btn-warning:hover, .ajaxlogin-btn-warning.disabled:focus, .ajaxlogin-btn-warning[disabled]:focus, fieldset[disabled] .ajaxlogin-btn-warning:focus, .ajaxlogin-btn-warning.disabled.focus, .ajaxlogin-btn-warning[disabled].focus, fieldset[disabled] .ajaxlogin-btn-warning.focus { background-color: #f0ad4e; border-color: #eea236 }
+.ajaxlogin-btn-warning .badge { color: #f0ad4e; background-color: #fff }
+.ajaxlogin-btn-danger { color: #fff; background-color: #d9534f; border-color: #d43f3a }
+.ajaxlogin-btn-danger:focus, .ajaxlogin-btn-danger.focus { color: #fff; background-color: #c9302c; border-color: #761c19 }
+.ajaxlogin-btn-danger:hover { color: #fff; background-color: #c9302c; border-color: #ac2925 }
+.ajaxlogin-btn-danger:active, .ajaxlogin-btn-danger.active, .open > .dropdown-toggle.ajaxlogin-btn-danger { color: #fff; background-color: #c9302c; border-color: #ac2925 }
+.ajaxlogin-btn-danger:active:hover, .ajaxlogin-btn-danger.active:hover, .open > .dropdown-toggle.ajaxlogin-btn-danger:hover, .ajaxlogin-btn-danger:active:focus, .ajaxlogin-btn-danger.active:focus, .open > .dropdown-toggle.ajaxlogin-btn-danger:focus, .ajaxlogin-btn-danger:active.focus, .ajaxlogin-btn-danger.active.focus, .open > .dropdown-toggle.ajaxlogin-btn-danger.focus { color: #fff; background-color: #ac2925; border-color: #761c19 }
+.ajaxlogin-btn-danger:active, .ajaxlogin-btn-danger.active, .open > .dropdown-toggle.ajaxlogin-btn-danger { background-image: none }
+.ajaxlogin-btn-danger.disabled:hover, .ajaxlogin-btn-danger[disabled]:hover, fieldset[disabled] .ajaxlogin-btn-danger:hover, .ajaxlogin-btn-danger.disabled:focus, .ajaxlogin-btn-danger[disabled]:focus, fieldset[disabled] .ajaxlogin-btn-danger:focus, .ajaxlogin-btn-danger.disabled.focus, .ajaxlogin-btn-danger[disabled].focus, fieldset[disabled] .ajaxlogin-btn-danger.focus { background-color: #d9534f; border-color: #d43f3a }
+.ajaxlogin-btn-danger .badge { color: #d9534f; background-color: #fff }
+.ajaxlogin-btn-link { color: #337ab7; font-weight: normal; border-radius: 0 }
+.ajaxlogin-btn-link, .ajaxlogin-btn-link:active, .ajaxlogin-btn-link.active, .ajaxlogin-btn-link[disabled], fieldset[disabled] .ajaxlogin-btn-link { background-color: transparent; -webkit-box-shadow: none; box-shadow: none }
+.ajaxlogin-btn-link, .ajaxlogin-btn-link:hover, .ajaxlogin-btn-link:focus, .ajaxlogin-btn-link:active { border-color: transparent }
+.ajaxlogin-btn-link:hover, .ajaxlogin-btn-link:focus { color: #23527c; text-decoration: underline; background-color: transparent }
+.ajaxlogin-btn-link[disabled]:hover, fieldset[disabled] .ajaxlogin-btn-link:hover, .ajaxlogin-btn-link[disabled]:focus, fieldset[disabled] .ajaxlogin-btn-link:focus { color: #777; text-decoration: none }
+.ajaxlogin-btn-lg { padding: 10px 16px; font-size: 18px; line-height: 1.3333333; border-radius: 6px }
+.ajaxlogin-btn-sm { padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px }
+.ajaxlogin-btn-xs { padding: 1px 5px; font-size: 12px; line-height: 1.5; border-radius: 3px }
+.ajaxlogin-btn-block { display: block; width: 100% }
+.ajaxlogin-btn-block + .ajaxlogin-btn-block { margin-top: 5px }
