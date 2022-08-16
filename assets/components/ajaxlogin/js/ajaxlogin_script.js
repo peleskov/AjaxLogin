@@ -53,7 +53,7 @@
                         $('.' + imageBlock).attr('src', response.data.nPh)
                     }
 
-                    if (response.data.success) {
+                    if (response.data.result) {
                         if (response.data.location){
                             window.location = response.data.location
                         }
