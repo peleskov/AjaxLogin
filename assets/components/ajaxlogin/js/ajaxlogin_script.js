@@ -46,10 +46,21 @@
             let service = response.data.service
 
             const services = {
-                'signup': function () {
+                'default': function () {
                     let alert = response.form.find('.alert')
-                    if (response.success || response.data.success) {
+
+                    if (response.data.nPh) {
+                        $('.' + imageBlock).attr('src', response.data.nPh)
+                    }
+
+                    if (response.data.success) {
+                        if (response.data.location){
+                            window.location = response.data.location
+                        }
                         alertClass = 'alert-success'
+                        if (response.data.nPh && imageBlock) {
+                            $('.' + imageBlock).attr('src', response.data.nPh)
+                        }
                     } else {
                         alertClass = 'alert-danger'
                         $.each(response.data.errors, (i, msg) => {
@@ -62,98 +73,14 @@
                         $('.modal').modal('hide')
                         $('#' + modalID).modal('show')
                     }
-                    if (response.form.find('.alert') && response.data.message) {
+                    if (alert && response.data.message) {
                         alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass(alertClass).text(response.data.message)
                     }
-                },
-                'login': function () {
-
-                    if (response.success || response.data.success) {
-                        window.location = response.data.location
-                    } else {
-                        let alert = response.form.find('.alert')
-                        alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-error').text(response.data.message)
-
-                        response.form.find('[name="username"]').addClass('is-invalid')
-                        response.form.find('[name="password"]')
-                            .addClass('is-invalid')
-                            .after($('<span class="invalid-feedback">' + (response.data.message || 'Некорректный логин или пароль.') + '</span>'))
-                    }
-
-                },
-                'forgotpass': function () {
-
-                    if (response.success || response.data.success) {
-                        if (modalID) {
-                            $('.modal').modal('hide')
-                            $('#' + modalID).modal('show')
-                        }
-                    } else {
-                        let alert = response.form.find('.alert')
-                        alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-error').text(response.data.message)
-
-                        $.each(response.data.errors, (i, msg) => {
-                            response.form.find('[name="' + i + '"]')
-                                .addClass('is-invalid')
-                                .after($('<span class="invalid-feedback">' + msg + '</span>'))
-                        });
-                    }
-
-                },
-                'changepass': function () {
-
-                    if (response.success || response.data.success) {
-                        if (modalID) {
-                            $('.modal').modal('hide')
-                            $('#' + modalID).modal('show')
-                        }
-
-                        let alert = response.form.find('.alert')
-                        alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-success').text(response.data.message)
-
-                    } else {
-                        response.form.find('.alert').show().addClass('alert-error').text(response.data.message)
-                        $.each(response.data.errors, (i, msg) => {
-                            response.form.find('[name="' + i + '"]')
-                                .addClass('is-invalid')
-                                .after($('<span class="invalid-feedback">' + msg + '</span>'))
-                        });
-                    }
-
-                },
-                'updateprof': function () {
-
-                    if (response.success || response.data.success) {
-                        if (response.data.nPh) {
-                            if (modalID) {
-                                $('.modal').modal('hide')
-                                $('#' + modalID).modal('show')
-                            }
-
-                            let alert = response.form.find('.alert')
-                            alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-success').text(response.data.message)
-
-                            // Замена изображения
-                            $('.' + imageBlock).attr('src', response.data.nPh)
-                        } else {
-                            console.log('Произошла непредвиведдая ошибка!')
-                        }
-
-                    } else {
-                        response.form.find('.alert').show().addClass('alert-error').text(response.data.message)
-                        $.each(response.data.errors, (i, msg) => {
-                            response.form.find('[name="' + i + '"]')
-                                .addClass('is-invalid')
-                                .after($('<span class="invalid-feedback">' + msg + '</span>'))
-                        });
-                    }
-
-                },
-                'default': 'service not found!'
+                }
 
             }
 
-            return (services[service] || services['default'])()
+            return (services['default'])()
 
         }
     }
