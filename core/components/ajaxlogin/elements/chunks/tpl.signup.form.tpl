@@ -2,11 +2,11 @@
     <h4 class="text-center">SignUp</h4>
     <div class="form-group">
         <label for="SignUpFullname">Full Name</label>
-        <input type="text" id="SignUpFullname" name="fullname" class="form-control" placeholder="Full Name">
+        <input type="text" id="SignUpFullname" name="fullname" class="form-control" placeholder="Full Name" value="Test Tesoff">
     </div>
     <div class="form-group">
         <label for="SignUpEmail">E-mail</label>
-        <input type="text" id="SignUpEmail" name="email" class="form-control" placeholder="e-mail">
+        <input type="text" id="SignUpEmail" name="email" class="form-control" placeholder="e-mail" value="info@s1temaker.ru">
     </div>
     <div class="form-group mb-4">
         <label>City</label>
@@ -22,12 +22,12 @@
     </div>
     <div class="form-group">
         <label for="SignUpPhone">Phone</label>
-        <input type="tel" id="SignUpPhone" name="mobilephone" class="form-control" placeholder="+7 123 456-78-90">
+        <input type="tel" id="SignUpPhone" name="mobilephone" class="form-control" placeholder="+7 123 456-78-90" value="+7 123 456-78-90">
     </div>
     <div class="form-group">
         <label for="SignUpPassword">Password</label>
         <div class="position-relative">
-            <input type="password" id="SignInPassword" name="password" class="form-control" placeholder="Password">
+            <input type="password" id="SignInPassword" name="password" class="form-control" placeholder="Password" value="123456789">
             <button type="button" class="btn btn-pwdshow" tabindex="-1"></button>
         </div>
     </div>
@@ -35,7 +35,7 @@
         <label for="SignUpConfirmPassword">Confirm Password</label>
         <div class="position-relative">
             <input type="password" id="SignUpConfirmPassword" name="password_confirm" class="form-control"
-                placeholder="Confirm Password">
+                placeholder="Confirm Password"  value="123456789">
             <button type="button" class="btn btn-pwdshow" tabindex="-1"></button>
         </div>
     </div>
@@ -48,4 +48,5 @@
     <div class="form-group">
         <button type="submit" class="btn btn-primary">SignUp</button>
     </div>
+    <div class="alert alert-error" role="alert" style="display: none;"></div>
 </form>

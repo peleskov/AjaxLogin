@@ -36,33 +36,34 @@
         },
 
         getService: function (response) {
-            let modalID, imageBlock
+            let modalID, imageBlock, alertClass
             if ('modalID' in response.data) {
                 modalID = response.data.modalID
             }
             if ('imageBlock' in response.data) {
                 imageBlock = response.data.imageBlock // блок где должно вставляться изображение
             }
-
             let service = response.data.service
 
             const services = {
                 'signup': function () {
+                    let alert = response.form.find('.alert')
                     if (response.success || response.data.success) {
-                        if (modalID) {
-                            $('.modal').modal('hide')
-                            $('#' + modalID).modal('show')
-                        }
-                        if (response.form.find('.alert').lenght > 0) {
-                            let alert = response.form.find('.alert').lenght
-                            alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-success').text(response.message)
-                        }
+                        alertClass = 'alert-success'
                     } else {
+                        alertClass = 'alert-danger'
                         $.each(response.data.errors, (i, msg) => {
                             response.form.find('[name="' + i + '"]')
                                 .addClass('is-invalid')
                                 .after($('<span class="invalid-feedback">' + msg + '</span>'))
                         });
+                    }
+                    if (modalID) {
+                        $('.modal').modal('hide')
+                        $('#' + modalID).modal('show')
+                    }
+                    if (response.form.find('.alert') && response.data.message) {
+                        alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass(alertClass).text(response.data.message)
                     }
                 },
                 'login': function () {
@@ -71,12 +72,12 @@
                         window.location = response.data.location
                     } else {
                         let alert = response.form.find('.alert')
-                        alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-error').text(response.message)
+                        alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-error').text(response.data.message)
 
                         response.form.find('[name="username"]').addClass('is-invalid')
                         response.form.find('[name="password"]')
                             .addClass('is-invalid')
-                            .after($('<span class="invalid-feedback">' + (response.message || 'Некорректный логин или пароль.') + '</span>'))
+                            .after($('<span class="invalid-feedback">' + (response.data.message || 'Некорректный логин или пароль.') + '</span>'))
                     }
 
                 },
@@ -89,7 +90,7 @@
                         }
                     } else {
                         let alert = response.form.find('.alert')
-                        alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-error').text(response.message)
+                        alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-error').text(response.data.message)
 
                         $.each(response.data.errors, (i, msg) => {
                             response.form.find('[name="' + i + '"]')
@@ -108,10 +109,10 @@
                         }
 
                         let alert = response.form.find('.alert')
-                        alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-success').text(response.message)
+                        alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-success').text(response.data.message)
 
                     } else {
-                        response.form.find('.alert').show().addClass('alert-error').text(response.message)
+                        response.form.find('.alert').show().addClass('alert-error').text(response.data.message)
                         $.each(response.data.errors, (i, msg) => {
                             response.form.find('[name="' + i + '"]')
                                 .addClass('is-invalid')
@@ -130,7 +131,7 @@
                             }
 
                             let alert = response.form.find('.alert')
-                            alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-success').text(response.message)
+                            alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-success').text(response.data.message)
 
                             // Замена изображения
                             $('.' + imageBlock).attr('src', response.data.nPh)
@@ -139,7 +140,7 @@
                         }
 
                     } else {
-                        response.form.find('.alert').show().addClass('alert-error').text(response.message)
+                        response.form.find('.alert').show().addClass('alert-error').text(response.data.message)
                         $.each(response.data.errors, (i, msg) => {
                             response.form.find('[name="' + i + '"]')
                                 .addClass('is-invalid')

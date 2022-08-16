@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    {include 'successModal'}
+    {include 'tpl.signup.success.modal'}
+    {include 'tpl.signup.error.modal'}
 
     <section class="pt-5 mb-5">
         <div class="container">
@@ -34,10 +35,12 @@
                     'usergroups' => 'Users',
                     'activation' => 1,
                     'activationResourceId' => 12,
-                    'activationEmailSubject' => 'Подтверждение регистрации',
+                    'activationEmailSubject' => 'Confirmation of registration',
                     'activationEmailTpl' => 'tpl.signup.activation.email',
-                    'successMsg' => 'Вы успешно зарегистрированы',
+                    'successMsg' => 'You have successfully registered.',
+                    'errorMsg' => 'The form contains errors, please try again.',
                     'successModalID' => 'successModal',
+                    'errorModalID' => 'errorModal',
                     'validate' => 'nospam:blank,
                     fullname:required:minLength=^3^,
                     email:required:email,

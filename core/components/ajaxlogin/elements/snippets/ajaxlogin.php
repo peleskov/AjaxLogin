@@ -6,9 +6,9 @@ switch ($service){
         foreach($modx->placeholders as $key => $ph){$placeholders[$key] = $ph;}
         if($modx->getPlaceholder($scriptProperties['placeholderPrefix'].'validation_error')){
             foreach($placeholders as $key => $ph){if(strpos($key, $scriptProperties['placeholderPrefix'].'error.') === 0) $errors[str_replace($scriptProperties['placeholderPrefix'].'error.', '', $key)] = trim(strip_tags($ph));}
-            return $AjaxForm->error('', array('service' => $service, 'errors' => $errors));  
+            return $AjaxForm->error('', array('service' => $service, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));  
         } 
-        else return $AjaxForm->success('', array('service' => $service, 'successmsg' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID']));
+        else return $AjaxForm->success('', array('service' => $service, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID']));
         break;
     case 'login':
         /*
