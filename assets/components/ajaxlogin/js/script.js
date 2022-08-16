@@ -41,27 +41,4 @@ $(document).ready(() => {
         $('.scrollbar-inner').scrollbar();
     }
     /*Custom scroll*/
-
-
-    /*
-    $(document).on('af_complete', function (event, response) {
-        var form = response.form;
-        $(form).find('.is-invalid').removeClass('is-invalid');
-        $(form).find('.invalid-feedback').remove();
-        if (response.success) {
-            $(form).closest('.modal').modal('hide');
-            if ($(form).closest('.modal').is('#modalQuestion')) {
-                $('#modalSuccessQuestion').modal('show');
-            } else {
-                $('#modalSuccessMsg').modal('show');
-            }
-        } else {
-            $('#modalErrorMsg').modal('show');
-            $.each(response.data, (i, val) => {
-                $(form).find('[name="' + i + '"').addClass('is-invalid').after('<span class="invalid-feedback">' + val + '</span>');
-            });
-    
-        }
-        response.message = '';
-        */
 });

@@ -17,6 +17,14 @@ return [
         'file' => 'tpl.signup.modal.error',
         'description' => '',
     ],
+    'tpl.signup.confirm' => [
+        'file' => 'tpl.signup.confirm',
+        'description' => '',
+    ],
+    'tpl.signup.activation.email' => [
+        'file' => 'tpl.signup.activation.email',
+        'description' => '',
+    ],
     'tpl.forgot.form' => [
         'file' => 'tpl.forgot.form',
         'description' => '',

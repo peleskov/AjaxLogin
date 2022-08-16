@@ -1,12 +1,8 @@
 <form>
     <h4 class="text-center">SignUp</h4>
     <div class="form-group">
-        <label for="SignUpFirstname">Name</label>
-        <input type="text" id="SignUpFirstname" name="firstname" class="form-control" placeholder="Name">
-    </div>
-    <div class="form-group">
-        <label for="SignUpSecondname">Surname</label>
-        <input type="text" id="SignUpSecondname" name="secondname" class="form-control" placeholder="Surname">
+        <label for="SignUpFullname">Full Name</label>
+        <input type="text" id="SignUpFullname" name="fullname" class="form-control" placeholder="Full Name">
     </div>
     <div class="form-group">
         <label for="SignUpEmail">E-mail</label>
@@ -15,7 +11,7 @@
     <div class="form-group mb-4">
         <label>City</label>
         <select class="w-100 custom-select2" name="city" id="SignUpCity">
-            <option disabled selected hidden>Enter your city</option>
+            <option disabled selected hidden value="">Enter your city</option>
             <option value="Москва">Moscow</option>
             <option value="Санкт-Петербург">St. Petersburg</option>
             <option value="Екатеринбург">Yekaterinburg</option>

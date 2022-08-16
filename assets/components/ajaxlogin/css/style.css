@@ -1,9 +1,9 @@
 .btn.btn-pwdshow {
   width: 24px;
-  height: 100%;
+  height: calc(1.5em + .75rem + 2px);
   padding: 0;
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 10px;
   border: 0 none !important;
   outline: 0 none !important;
