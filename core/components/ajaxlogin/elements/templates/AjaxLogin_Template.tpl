@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    {include 'successModal'}
+
     <section class="pt-5 mb-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -35,6 +37,7 @@
                     'activationEmailSubject' => 'Подтверждение регистрации',
                     'activationEmailTpl' => 'tpl.signup.activation.email',
                     'successMsg' => 'Вы успешно зарегистрированы',
+                    'successModalID' => 'successModal',
                     'validate' => 'nospam:blank,
                     fullname:required:minLength=^3^,
                     email:required:email,

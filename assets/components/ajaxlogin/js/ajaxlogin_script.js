@@ -53,8 +53,10 @@
                             $('.modal').modal('hide')
                             $('#' + modalID).modal('show')
                         }
-                        let alert = response.form.find('.alert')
-                        alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-success').text(response.message)
+                        if (response.form.find('.alert').lenght > 0) {
+                            let alert = response.form.find('.alert').lenght
+                            alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-success').text(response.message)
+                        }
                     } else {
                         $.each(response.data.errors, (i, msg) => {
                             response.form.find('[name="' + i + '"]')
@@ -88,7 +90,7 @@
                     } else {
                         let alert = response.form.find('.alert')
                         alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-error').text(response.message)
-                        
+
                         $.each(response.data.errors, (i, msg) => {
                             response.form.find('[name="' + i + '"]')
                                 .addClass('is-invalid')
@@ -126,7 +128,7 @@
                                 $('.modal').modal('hide')
                                 $('#' + modalID).modal('show')
                             }
-   
+
                             let alert = response.form.find('.alert')
                             alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass('alert-success').text(response.message)
 

@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'successModal' => [
+        'file' => 'successModal',
+        'description' => '',
+    ],
     'tpl.signin.form' => [
         'file' => 'tpl.signin.form',
         'description' => '',

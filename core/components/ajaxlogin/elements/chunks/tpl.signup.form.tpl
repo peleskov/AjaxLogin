@@ -28,7 +28,7 @@
         <label for="SignUpPassword">Password</label>
         <div class="position-relative">
             <input type="password" id="SignInPassword" name="password" class="form-control" placeholder="Password">
-            <button type="button" class="btn btn-pwdshow"></button>
+            <button type="button" class="btn btn-pwdshow" tabindex="-1"></button>
         </div>
     </div>
     <div class="form-group">
@@ -36,7 +36,7 @@
         <div class="position-relative">
             <input type="password" id="SignUpConfirmPassword" name="password_confirm" class="form-control"
                 placeholder="Confirm Password">
-            <button type="button" class="btn btn-pwdshow"></button>
+            <button type="button" class="btn btn-pwdshow" tabindex="-1"></button>
         </div>
     </div>
     <div class="form-group">
