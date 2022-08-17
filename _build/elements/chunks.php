@@ -25,10 +25,6 @@ return [
         'file' => 'tpl.signup.form',
         'description' => '',
     ],
-    'tpl.signup.confirm' => [
-        'file' => 'tpl.signup.confirm',
-        'description' => '',
-    ],
     'tpl.signup.activation.email' => [
         'file' => 'tpl.signup.activation.email',
         'description' => '',
@@ -59,6 +55,14 @@ return [
     ],
     'tpl.ressetpass.expired' => [
         'file' => 'tpl.ressetpass.expired',
+        'description' => '',
+    ],
+    'tpl.profile.pwd_update.form' => [
+        'file' => 'tpl.profile.pwd_update.form',
+        'description' => '',
+    ],
+    'tpl.profile.pwd_update.modal.success' => [
+        'file' => 'tpl.profile.pwd_update.modal.success',
         'description' => '',
     ],
 ];

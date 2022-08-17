@@ -68,9 +68,9 @@ switch ($service) {
             foreach ($placeholders as $key => $ph) {
                 if (strpos($key, $scriptProperties['placeholderPrefix'] . 'error.') === 0) $errors[str_replace($scriptProperties['placeholderPrefix'] . 'error.', '', $key)] = $ph;
             }
-            return $AjaxForm->error($modx->lexicon('login.password_err_change'), array('service' => $service, 'errors' => $errors));
+            return $AjaxForm->error('', array('result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
         } else { //SUCCESS
-            return $AjaxForm->success($modx->lexicon('login.password_changed'), array('service' => $service, 'submitVar' => $scriptProperties['submitVar']));
+            return $AjaxForm->success('', array('result' => true, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID'], 'submitVar' => $scriptProperties['submitVar']));
         }
         break;
     case 'updateprof':

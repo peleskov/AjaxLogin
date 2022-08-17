@@ -9,4 +9,8 @@ return [
         'file' => 'AjaxLogin_ResetPass_Template',
         'description' => '',
     ],
+    'AjaxLogin_RegConfirm_Template' => [
+        'file' => 'AjaxLogin_RegConfirm_Template',
+        'description' => '',
+    ],
 ];

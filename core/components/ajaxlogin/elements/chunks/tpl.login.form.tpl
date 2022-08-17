@@ -10,8 +10,8 @@
         <label for="SignInPassword">Password</label>
         <div class="position-relative">
             <input type="password" id="SignInPassword" name="password" class="form-control"
-                placeholder="Password" value="BUxL4sfgu4">
-            <button type="button" class="btn btn-pwdshow"></button>
+                placeholder="Password" value="123456789">
+            <button type="button" class="btn btn-pwdshow" tabindex="-1"></button>
         </div>
     </div>
     <div class="form-group">
