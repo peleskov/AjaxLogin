@@ -9,10 +9,6 @@ return [
         'file' => 'tpl.login.form',
         'description' => '',
     ],
-    'tpl.login.modal.error' => [
-        'file' => 'tpl.login.modal.error',
-        'description' => '',
-    ],
     'tpl.logout' => [
         'file' => 'tpl.logout',
         'description' => '',
@@ -29,20 +25,24 @@ return [
         'file' => 'tpl.signup.activation.email',
         'description' => '',
     ],
-    'tpl.signup.success.modal' => [
-        'file' => 'tpl.signup.success.modal',
+    'tpl.signup.modal.success' => [
+        'file' => 'tpl.signup.modal.success',
         'description' => '',
     ],
     'tpl.forgot.form' => [
         'file' => 'tpl.forgot.form',
         'description' => '',
     ],
-    'tpl.forgot.modal.error' => [
-        'file' => 'tpl.forgot.modal.error',
+    'tpl.forgot.email' => [
+        'file' => 'tpl.forgot.email',
         'description' => '',
     ],
-    'tpl.error.modal' => [
-        'file' => 'tpl.error.modal',
+    'tpl.forgot.modal.success' => [
+        'file' => 'tpl.forgot.modal.success',
+        'description' => '',
+    ],
+    'tpl.modal.error' => [
+        'file' => 'tpl.modal.error',
         'description' => '',
     ],
 ];

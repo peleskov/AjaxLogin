@@ -10,8 +10,8 @@ switch ($service) {
             foreach ($placeholders as $key => $ph) {
                 if (strpos($key, $scriptProperties['placeholderPrefix'] . 'error.') === 0) $errors[str_replace($scriptProperties['placeholderPrefix'] . 'error.', '', $key)] = trim(strip_tags($ph));
             }
-            return $AjaxForm->error('', array('result' => false, 'service' => $service, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
-        } else return $AjaxForm->success('', array('result' => true, 'service' => $service, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID']));
+            return $AjaxForm->error('', array('result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
+        } else return $AjaxForm->success('', array('result' => true, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID']));
         break;
     case 'login':
         /*
@@ -28,16 +28,21 @@ switch ($service) {
                 'username' => '',
                 'password' => $scriptProperties['errorMsg']
             );
-            return $AjaxForm->error('', array('result' => false, 'service' => $service, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
+            return $AjaxForm->error('', array('result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
         } 
-        else return $AjaxForm->success('', array('result' => true, 'service' => $service, 'location' => $modx->makeUrl($scriptProperties['redirectID'])));
+        else return $AjaxForm->success('', array('result' => true, 'location' => $modx->makeUrl($scriptProperties['redirectID'])));
         break;
     case 'forgotpass':
         $scriptProperties['tpl'] = 'error';
         $scriptProperties['tplType'] = 'inline';
         $modx->setPlaceholder('email', $_POST['email']);
-        if ($modx->runSnippet('ForgotPassword', $scriptProperties) == 'error') return $AjaxForm->error($errorMsg, array('service' => $service, 'errors' => array('email' => $errorMsg)));
-        else return $AjaxForm->success('email send', array('service' => $service, 'message' => $modx->getChunk($sentTpl)));
+        if ($modx->runSnippet('ForgotPassword', $scriptProperties) == 'error'){
+            $errors = array(
+                'email' => $scriptProperties['errorMsg'],
+            );
+            return $AjaxForm->error('', array('result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
+        }
+        else return $AjaxForm->success('', array('result' => true, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID']));
         break;
     case 'ressetpass':
         if (!$modx->user->isAuthenticated()) {
