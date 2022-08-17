@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    {include 'tpl.signup.success.modal'}
-    {include 'tpl.error.modal'}
+    {include 'tpl.signup.modal.success'}
+    {include 'tpl.forgot.modal.success'}
+    {include 'tpl.modal.error'}
     <section class="mb-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -27,9 +28,14 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     {'!AjaxForm'|snippet:[
                     'snippet' => 'AjaxLogin',
-                    'service' => 'forgot',
-                    'errTpl' => 'tpl.forgot.modal.error',
+                    'service' => 'forgotpass',
+                    'successModalID' => 'successForgotModal',
+                    'successMsg' => 'Password recovery instructions have been sent to your email.',
+                    'errorMsg' => 'Email was not found in the database.',
+                    'errorModalID' => 'errorModal',
                     'form' => 'tpl.forgot.form',
+                    'emailTpl' => 'tpl.forgot.email',
+                    'emailSubject' => 'Password recovery instructions'
                     ]}
                 </div>
             </div>
@@ -79,6 +85,12 @@
         </div>
     </section>
 
+    {'!customLogin' | snippet : [
+    'service'         => 'ressetpass',
+    'expiredTpl'      => 'tpl.ressetpass.expired',
+    'loginResourceId' => $_modx->resource.id,
+    'autoLogin'       => '1',
+    ]}
 
     <link rel="stylesheet" href="{$_modx->config.assets_url}theme/apps/bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{$_modx->config.assets_url}components/ajaxlogin/apps/scrollbar/jquery.scrollbar.css">
