@@ -1,4 +1,7 @@
 <?php
+
+use LDAP\Result;
+
 switch ($service) {
     case 'signup':
         if (empty($scriptProperties['placeholderPrefix'])) $scriptProperties['placeholderPrefix'] = 'su.';
@@ -78,13 +81,13 @@ switch ($service) {
         $scriptProperties['reloadOnSuccess'] = '0';
         $scriptProperties['redirectToLogin'] = '0';
         if (isset($_FILES['photo']) && !empty($_FILES['photo'])) { //update photo
-            if ($ms = $modx->getObject('modMediaSource', 4)) {
-                $ms_prop = $ms->getProperties();
-                $ms_path = $ms_prop['basePath']['value'];
+            if ($scriptProperties['avatarsDirPath'] != '') {
+                $ms_prop = $scriptProperties['avatarsDirPath'];
             }
-            if (!$ms_path) {
-                $ms_path = MODX_ASSETS_PATH;
+            else{
+                $ms_path = MODX_ASSETS_PATH . 'avatars/';
             }
+            $modx->log(1, $ms_path);
             $dirPhoto = MODX_BASE_PATH . $ms_path . 'avatars/usr_'  . $modx->user->get('id');
             if (!file_exists($dirPhoto)) mkdir($dirPhoto, 0755, true);
             $extPhoto = mb_strtolower(pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION));
@@ -117,13 +120,13 @@ switch ($service) {
             foreach ($placeholders as $key => $ph) {
                 if (strpos($key, $scriptProperties['placeholderPrefix'] . 'error.') === 0) $errors[str_replace($scriptProperties['placeholderPrefix'] . 'error.', '', $key)] = trim(strip_tags($ph));
             }
-            return $AjaxForm->error($modx->lexicon('custLogin.errors_inform'), array('service' => $service, 'errors' => $errors));
+            return $AjaxForm->error('', array('result' => false,'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
         } else { //SUCCESS $AjaxForm->success not used because ajaxform default.js has form[0].reset()
             foreach ($placeholders as $key => $ph) {
                 if (in_array(str_replace($scriptProperties['placeholderPrefix'], '', $key), $fields)) $values[str_replace($scriptProperties['placeholderPrefix'], '', $key)] = $ph;
             }
-            $array = array('service' => $service, 'success' => 1, 'submitVar' => $scriptProperties['submitVar']);
-            if ($newPhoto) $array['nPh'] = $newPhoto;
+            $array = array('result' => true, 'imageBlock' => $scriptProperties['imageBlock'], 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID'], 'submitVar' => $scriptProperties['submitVar']);
+            if ($newPhoto) $array['avatar'] = $newPhoto;
             return $AjaxForm->error($placeholders['error.message'], $array);
         }
         break;

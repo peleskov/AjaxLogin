@@ -41,4 +41,21 @@ $(document).ready(() => {
         $('.scrollbar-inner').scrollbar();
     }
     /*Custom scroll*/
+
+    /*Photo preview*/
+    $('.avatar-box input[type="file"]').on('change', (e) => {
+        let files = e.target.files[0];
+        if (files) {
+            var fileExtension = ['jpg', 'jpeg', 'png'];
+            if ($.inArray(files.name.split('.').pop().toLowerCase(), fileExtension) == -1) {
+                return;
+            }
+            let reader = new FileReader();
+            reader.onload = function () {
+                $(e.target).parent().addClass('modified').find('img').removeClass('d-none').attr('src', reader.result);
+            };
+            reader.readAsDataURL(files);
+        }
+    })
+    /*Photo preview*/
 });

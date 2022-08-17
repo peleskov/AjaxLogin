@@ -24,6 +24,14 @@ $packages = [
         'version' => '1.9.10-pl',
         'service_url' => 'modstore.pro',
     ],
+    'pThumb' => [
+        'version' => '2.3.3-pl',
+        'service_url' => 'modstore.pro',
+    ],
+    'Resizer' => [
+        'version' => '1.0.2-beta',
+        'service_url' => 'modstore.pro',
+    ],
 ];
 
 $downloadPackage = function ($src, $dst) {

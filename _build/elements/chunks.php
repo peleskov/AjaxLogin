@@ -65,4 +65,12 @@ return [
         'file' => 'tpl.profile.pwd_update.modal.success',
         'description' => '',
     ],
+    'tpl.profile.update.form' => [
+        'file' => 'tpl.profile.update.form',
+        'description' => '',
+    ],
+    'tpl.profile.update.modal.success' => [
+        'file' => 'tpl.profile.update.modal.success',
+        'description' => '',
+    ],
 ];

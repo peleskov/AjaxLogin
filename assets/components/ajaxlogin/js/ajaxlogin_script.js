@@ -44,8 +44,8 @@
             }
             if ('imageBlock' in response.data) {
                 imageBlocks = $(response.data.imageBlock) // блоки где должен вставляться аватар
-                if ('nPh' in response.data && imageBlocks.length > 0) {
-                    imageBlocks.attr('src', response.data.nPh)
+                if ('avatar' in response.data && imageBlocks.length > 0) {
+                    imageBlocks.removeClass('modified').find('img').attr('src', response.data.avatar)
                 }
             }
 

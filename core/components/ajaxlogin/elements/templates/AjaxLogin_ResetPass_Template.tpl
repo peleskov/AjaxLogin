@@ -27,7 +27,7 @@
                     {'!AjaxLogin' | snippet : [
                     'service' => 'ressetpass',
                     'expiredTpl' => 'tpl.ressetpass.expired',
-                    'loginResourceId' => 11,
+                    'loginResourceId' => 14,
                     'autoLogin' => 0,
                     ]}
                 </div>

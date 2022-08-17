@@ -26,8 +26,8 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     {'ConfirmRegister'|snippet:[
                     'authenticate' => 1,
-                    'redirectTo' => 11,
-                    'errorPage' => 11,
+                    'redirectTo' => 14,
+                    'errorPage' => 14,
                     ]}
                 </div>
             </div>
