@@ -36,52 +36,39 @@
         },
 
         getService: function (response) {
-            let modalID, imageBlock, alertClass
+            let modalID, imageBlocks, alertClass
+            let alert = response.form.find('.alert')
+
             if ('modalID' in response.data) {
                 modalID = response.data.modalID
             }
             if ('imageBlock' in response.data) {
-                imageBlock = response.data.imageBlock // блок где должно вставляться изображение
-            }
-            let service = response.data.service
-
-            const services = {
-                'default': function () {
-                    let alert = response.form.find('.alert')
-
-                    if (response.data.nPh) {
-                        $('.' + imageBlock).attr('src', response.data.nPh)
-                    }
-
-                    if (response.data.result) {
-                        if (response.data.location){
-                            window.location = response.data.location
-                        }
-                        alertClass = 'alert-success'
-                        if (response.data.nPh && imageBlock) {
-                            $('.' + imageBlock).attr('src', response.data.nPh)
-                        }
-                    } else {
-                        alertClass = 'alert-danger'
-                        $.each(response.data.errors, (i, msg) => {
-                            response.form.find('[name="' + i + '"]')
-                                .addClass('is-invalid')
-                                .after($('<span class="invalid-feedback">' + msg + '</span>'))
-                        });
-                    }
-                    if (modalID) {
-                        $('.modal').modal('hide')
-                        $('#' + modalID).modal('show')
-                    }
-                    if (alert && response.data.message) {
-                        alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass(alertClass).text(response.data.message)
-                    }
+                imageBlocks = $(response.data.imageBlock) // блоки где должен вставляться аватар
+                if ('nPh' in response.data && imageBlocks.length > 0) {
+                    imageBlocks.attr('src', response.data.nPh)
                 }
-
             }
 
-            return (services['default'])()
-
+            if (response.data.result) {
+                if ('location' in response.data) {
+                    window.location = response.data.location
+                }
+                alertClass = 'alert-success'
+            } else {
+                alertClass = 'alert-danger'
+                $.each(response.data.errors, (i, msg) => {
+                    response.form.find('[name="' + i + '"]')
+                        .addClass('is-invalid')
+                        .after($('<span class="invalid-feedback">' + msg + '</span>'))
+                });
+            }
+            if (modalID) {
+                $('.modal').modal('hide')
+                $('#' + modalID).modal('show')
+            }
+            if (alert.length > 0 && response.data.message) {
+                alert.show().attr('class', alert.attr('class').replace(/\balert-\w*\b/g, '')).addClass(alertClass).text(response.data.message)
+            }
         }
     }
 

@@ -1,12 +1,20 @@
 <?php
 
 return [
-    'tpl.signin.form' => [
-        'file' => 'tpl.signin.form',
+    'tpl.login' => [
+        'file' => 'tpl.login',
         'description' => '',
     ],
-    'tpl.signin.modal.error' => [
-        'file' => 'tpl.signin.modal.error',
+    'tpl.login.form' => [
+        'file' => 'tpl.login.form',
+        'description' => '',
+    ],
+    'tpl.login.modal.error' => [
+        'file' => 'tpl.login.modal.error',
+        'description' => '',
+    ],
+    'tpl.logout' => [
+        'file' => 'tpl.logout',
         'description' => '',
     ],
     'tpl.signup.form' => [
@@ -25,16 +33,16 @@ return [
         'file' => 'tpl.signup.success.modal',
         'description' => '',
     ],
-    'tpl.signup.error.modal' => [
-        'file' => 'tpl.signup.error.modal',
-        'description' => '',
-    ],
     'tpl.forgot.form' => [
         'file' => 'tpl.forgot.form',
         'description' => '',
     ],
     'tpl.forgot.modal.error' => [
         'file' => 'tpl.forgot.modal.error',
+        'description' => '',
+    ],
+    'tpl.error.modal' => [
+        'file' => 'tpl.error.modal',
         'description' => '',
     ],
 ];
