@@ -23,38 +23,36 @@ switch ($service) {
         foreach ($modx->placeholders as $key => $ph) {
             if (strpos($key, 'errors') === 0) $placeholders[$key] = $ph;
         }
-        if ($placeholders['errors']){
+        if ($placeholders['errors']) {
             $errors = array(
                 'username' => '',
                 'password' => $scriptProperties['errorMsg']
             );
             return $AjaxForm->error('', array('result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
-        } 
-        else return $AjaxForm->success('', array('result' => true, 'location' => $modx->makeUrl($scriptProperties['redirectID'])));
+        } else return $AjaxForm->success('', array('result' => true, 'location' => $modx->makeUrl($scriptProperties['redirectID'])));
         break;
     case 'forgotpass':
         $scriptProperties['tpl'] = 'error';
         $scriptProperties['tplType'] = 'inline';
         $modx->setPlaceholder('email', $_POST['email']);
-        if ($modx->runSnippet('ForgotPassword', $scriptProperties) == 'error'){
+        if ($modx->runSnippet('ForgotPassword', $scriptProperties) == 'error') {
             $errors = array(
                 'email' => $scriptProperties['errorMsg'],
             );
             return $AjaxForm->error('', array('result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
-        }
-        else return $AjaxForm->success('', array('result' => true, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID']));
+        } else return $AjaxForm->success('', array('result' => true, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID']));
         break;
     case 'ressetpass':
+        $result = $modx->runSnippet('ResetPassword', $scriptProperties);
+        $url = $modx->makeUrl($scriptProperties['loginResourceId']);
         if (!$modx->user->isAuthenticated()) {
             $scriptProperties['tpl'] = 'success';
             $scriptProperties['tplType'] = 'inline';
-            $result = $modx->runSnippet('ResetPassword', $scriptProperties);
             if ($result == 'success') {
-                $url = $modx->makeUrl(15);
                 return $modx->sendRedirect($url, array('responseCode' => 'HTTP/1.1 301 Moved Permanently'));
-            } else return $result;
+            } else
+                return $result;
         } else {
-            $url = $modx->makeUrl(15);
             return $modx->sendRedirect($url, array('responseCode' => 'HTTP/1.1 301 Moved Permanently'));
         }
         break;

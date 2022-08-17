@@ -26,16 +26,10 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-4">
-                    {'!AjaxForm'|snippet:[
-                    'snippet' => 'AjaxLogin',
-                    'service' => 'forgotpass',
-                    'successModalID' => 'successForgotModal',
-                    'successMsg' => 'Password recovery instructions have been sent to your email.',
-                    'errorMsg' => 'Email was not found in the database.',
-                    'errorModalID' => 'errorModal',
-                    'form' => 'tpl.forgot.form',
-                    'emailTpl' => 'tpl.forgot.email',
-                    'emailSubject' => 'Password recovery instructions'
+                    {'!Login' | snippet : [
+                    'tplType' => 'modChunk',
+                    'logoutTpl' => 'tpl.logout',
+                    'loginTpl' => 'tpl.login',
                     ]}
                 </div>
             </div>
@@ -45,10 +39,18 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-4">
-                    {'!Login' | snippet : [
-                    'tplType' => 'modChunk',
-                    'logoutTpl' => 'tpl.logout',
-                    'loginTpl' => 'tpl.login',
+                    {'!AjaxForm'|snippet:[
+                    'snippet' => 'AjaxLogin',
+                    'service' => 'forgotpass',
+                    'loginResourceId' => 11,
+                    'resetResourceId' => 13,
+                    'successModalID' => 'successForgotModal',
+                    'successMsg' => 'Password recovery instructions have been sent to your email.',
+                    'errorMsg' => 'Email was not found in the database.',
+                    'errorModalID' => 'errorModal',
+                    'form' => 'tpl.forgot.form',
+                    'emailTpl' => 'tpl.forgot.email',
+                    'emailSubject' => 'Password recovery instructions'
                     ]}
                 </div>
             </div>
@@ -85,26 +87,8 @@
         </div>
     </section>
 
-    {'!customLogin' | snippet : [
-    'service'         => 'ressetpass',
-    'expiredTpl'      => 'tpl.ressetpass.expired',
-    'loginResourceId' => $_modx->resource.id,
-    'autoLogin'       => '1',
-    ]}
-
-    <link rel="stylesheet" href="{$_modx->config.assets_url}theme/apps/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{$_modx->config.assets_url}components/ajaxlogin/apps/scrollbar/jquery.scrollbar.css">
-    <link rel="stylesheet" href="{$_modx->config.assets_url}components/ajaxlogin/apps/select2/select2.min.css">
-    <link rel="stylesheet" href="{$_modx->config.assets_url}components/ajaxlogin/css/style.min.css">
-
-    <script src="{$_modx->config.assets_url}theme/apps/jquery/jquery-3.6.0.min.js"></script>
-    <script src="{$_modx->config.assets_url}theme/apps/bootstrap-4.5.3-dist/js/popper.min.js"></script>
-    <script src="{$_modx->config.assets_url}theme/apps/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
-    <script src="{$_modx->config.assets_url}components/ajaxlogin/apps/inputmask/jquery.inputmask.min.js"></script>
-    <script src="{$_modx->config.assets_url}components/ajaxlogin/apps/scrollbar/jquery.scrollbar.min.js"></script>
-    <script src="{$_modx->config.assets_url}components/ajaxlogin/apps/select2/select2.full.min.js"></script>
-    <script src="{$_modx->config.assets_url}components/ajaxlogin/js/script.min.js"></script>
-    <script src="{$_modx->config.assets_url}components/ajaxlogin/js/ajaxlogin_script.min.js"></script>
+    {include 'tpl.stylesheet'}
+    {include 'tpl.script'}
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 <form>
     <input type="hidden" name="service" value="login" />
-    <h4 class="text-center">Sign In</h4>
+    <h4 class="text-center">LogIn</h4>
     <div class="form-group">
         <label for="SignInUsername">User name</label>
         <input type="text" id="SignInUsername" name="username" class="form-control"
@@ -10,7 +10,7 @@
         <label for="SignInPassword">Password</label>
         <div class="position-relative">
             <input type="password" id="SignInPassword" name="password" class="form-control"
-                placeholder="Password" value="123456789">
+                placeholder="Password" value="BUxL4sfgu4">
             <button type="button" class="btn btn-pwdshow"></button>
         </div>
     </div>

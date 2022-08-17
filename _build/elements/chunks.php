@@ -1,6 +1,14 @@
 <?php
 
 return [
+    'tpl.stylesheet' => [
+        'file' => 'tpl.stylesheet',
+        'description' => '',
+    ],
+    'tpl.script' => [
+        'file' => 'tpl.script',
+        'description' => '',
+    ],
     'tpl.login' => [
         'file' => 'tpl.login',
         'description' => '',
@@ -43,6 +51,14 @@ return [
     ],
     'tpl.modal.error' => [
         'file' => 'tpl.modal.error',
+        'description' => '',
+    ],
+    'tpl.ressetpass' => [
+        'file' => 'tpl.ressetpass',
+        'description' => '',
+    ],
+    'tpl.ressetpass.expired' => [
+        'file' => 'tpl.ressetpass.expired',
         'description' => '',
     ],
 ];
