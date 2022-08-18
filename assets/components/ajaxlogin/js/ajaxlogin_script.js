@@ -14,11 +14,11 @@
         },
 
         eventAfComplete: function (event, response) {
-
-            this.cleanDOM(response)
-            this.offLibraries(response)
-            this.getService(response)
-
+            if (response.data.service == 'ajaxlogin') {
+                this.cleanDOM(response)
+                this.offLibraries(response)
+                this.getService(response)
+            }
         },
 
         cleanDOM: function (response) {

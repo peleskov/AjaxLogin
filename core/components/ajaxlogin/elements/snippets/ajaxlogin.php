@@ -13,8 +13,8 @@ switch ($service) {
             foreach ($placeholders as $key => $ph) {
                 if (strpos($key, $scriptProperties['placeholderPrefix'] . 'error.') === 0) $errors[str_replace($scriptProperties['placeholderPrefix'] . 'error.', '', $key)] = trim(strip_tags($ph));
             }
-            return $AjaxForm->error('', array('result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
-        } else return $AjaxForm->success('', array('result' => true, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID']));
+            return $AjaxForm->error('', array('service' => 'ajaxlogin', 'result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
+        } else return $AjaxForm->success('', array('service' => 'ajaxlogin', 'result' => true, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID']));
         break;
     case 'login':
         /*
@@ -31,8 +31,8 @@ switch ($service) {
                 'username' => '',
                 'password' => $scriptProperties['errorMsg']
             );
-            return $AjaxForm->error('', array('result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
-        } else return $AjaxForm->success('', array('result' => true, 'location' => $modx->makeUrl($scriptProperties['redirectID'])));
+            return $AjaxForm->error('', array('service' => 'ajaxlogin', 'result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
+        } else return $AjaxForm->success('', array('service' => 'ajaxlogin', 'result' => true, 'location' => $modx->makeUrl($scriptProperties['redirectID'])));
         break;
     case 'forgotpass':
         $scriptProperties['tpl'] = 'error';
@@ -42,8 +42,8 @@ switch ($service) {
             $errors = array(
                 'email' => $scriptProperties['errorMsg'],
             );
-            return $AjaxForm->error('', array('result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
-        } else return $AjaxForm->success('', array('result' => true, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID']));
+            return $AjaxForm->error('', array('service' => 'ajaxlogin', 'result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
+        } else return $AjaxForm->success('', array('service' => 'ajaxlogin', 'result' => true, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID']));
         break;
     case 'ressetpass':
         $result = $modx->runSnippet('ResetPassword', $scriptProperties);
@@ -71,9 +71,9 @@ switch ($service) {
             foreach ($placeholders as $key => $ph) {
                 if (strpos($key, $scriptProperties['placeholderPrefix'] . 'error.') === 0) $errors[str_replace($scriptProperties['placeholderPrefix'] . 'error.', '', $key)] = $ph;
             }
-            return $AjaxForm->error('', array('result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
+            return $AjaxForm->error('', array('service' => 'ajaxlogin', 'result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
         } else { //SUCCESS
-            return $AjaxForm->success('', array('result' => true, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID'], 'submitVar' => $scriptProperties['submitVar']));
+            return $AjaxForm->success('', array('service' => 'ajaxlogin', 'result' => true, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID'], 'submitVar' => $scriptProperties['submitVar']));
         }
         break;
     case 'updateprof':
@@ -118,12 +118,12 @@ switch ($service) {
             foreach ($placeholders as $key => $ph) {
                 if (strpos($key, $scriptProperties['placeholderPrefix'] . 'error.') === 0) $errors[str_replace($scriptProperties['placeholderPrefix'] . 'error.', '', $key)] = trim(strip_tags($ph));
             }
-            return $AjaxForm->error('', array('result' => false,'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
+            return $AjaxForm->error('', array('service' => 'ajaxlogin', 'result' => false,'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
         } else { //SUCCESS $AjaxForm->success not used because ajaxform default.js has form[0].reset()
             foreach ($placeholders as $key => $ph) {
                 if (in_array(str_replace($scriptProperties['placeholderPrefix'], '', $key), $fields)) $values[str_replace($scriptProperties['placeholderPrefix'], '', $key)] = $ph;
             }
-            $array = array('result' => true, 'imageBlock' => $scriptProperties['imageBlock'], 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID'], 'submitVar' => $scriptProperties['submitVar']);
+            $array = array('service' => 'ajaxlogin', 'result' => true, 'imageBlock' => $scriptProperties['imageBlock'], 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID'], 'submitVar' => $scriptProperties['submitVar']);
             if ($newPhotoPath) $array['avatar'] = $newPhoto;
             return $AjaxForm->error($placeholders['error.message'], $array);
         }
