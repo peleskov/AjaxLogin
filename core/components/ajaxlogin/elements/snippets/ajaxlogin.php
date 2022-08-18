@@ -1,7 +1,4 @@
 <?php
-
-use LDAP\Result;
-
 switch ($service) {
     case 'signup':
         if (empty($scriptProperties['placeholderPrefix'])) $scriptProperties['placeholderPrefix'] = 'su.';
