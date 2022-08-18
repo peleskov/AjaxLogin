@@ -53,6 +53,10 @@ return [
         'file' => 'ajaxlogin.ressetpass.expired',
         'description' => '',
     ],
+    'ajaxlogin.ressetpass.change' => [
+        'file' => 'ajaxlogin.ressetpass.change',
+        'description' => '',
+    ],
     'ajaxlogin.profile.pwd_update.form' => [
         'file' => 'ajaxlogin.profile.pwd_update.form',
         'description' => '',
