@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    {include 'tpl.modal.error'}
+    {include 'ajaxlogin.modal.error'}
     <section class="mb-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -34,8 +34,8 @@
         </div>
     </section>
 
-    {include 'tpl.stylesheet'}
-    {include 'tpl.script'}
+    {include 'ajaxlogin.stylesheet'}
+    {include 'ajaxlogin.script'}
 </body>
 
 </html>

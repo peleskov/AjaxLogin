@@ -8,7 +8,7 @@
 {'!AjaxForm' | snippet : [
 'snippet' => 'AjaxLogin',
 'service' => 'changepass',
-'form' => 'tpl.profile.pwd_update.form',
+'form' => 'ajaxlogin.profile.pwd_update.form',
 'submitVar' => 'changepwd-btn',
 'validateOldPassword' => '1',
 'successMsg' => 'Password changed successfully',
@@ -21,7 +21,7 @@
 {'!AjaxForm' | snippet : [
 'snippet' => 'AjaxLogin',
 'service' => 'updateprof',
-'form' => 'tpl.profile.update.form',
+'form' => 'ajaxlogin.profile.update.form',
 'submitVar' => 'updateprofile-btn',
 'thumbW' => '150',
 'thumbH' => '150',

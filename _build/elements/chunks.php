@@ -1,72 +1,72 @@
 <?php
 
 return [
-    'tpl.stylesheet' => [
-        'file' => 'tpl.stylesheet',
+    'ajaxlogin.stylesheet' => [
+        'file' => 'ajaxlogin.stylesheet',
         'description' => '',
     ],
-    'tpl.script' => [
-        'file' => 'tpl.script',
+    'ajaxlogin.script' => [
+        'file' => 'ajaxlogin.script',
         'description' => '',
     ],
-    'tpl.login' => [
-        'file' => 'tpl.login',
+    'ajaxlogin.login' => [
+        'file' => 'ajaxlogin.login',
         'description' => '',
     ],
-    'tpl.login.form' => [
-        'file' => 'tpl.login.form',
+    'ajaxlogin.login.form' => [
+        'file' => 'ajaxlogin.login.form',
         'description' => '',
     ],
-    'tpl.logout' => [
-        'file' => 'tpl.logout',
+    'ajaxlogin.logout' => [
+        'file' => 'ajaxlogin.logout',
         'description' => '',
     ],
-    'tpl.signup.form' => [
-        'file' => 'tpl.signup.form',
+    'ajaxlogin.signup.form' => [
+        'file' => 'ajaxlogin.signup.form',
         'description' => '',
     ],
-    'tpl.signup.activation.email' => [
-        'file' => 'tpl.signup.activation.email',
+    'ajaxlogin.signup.activation.email' => [
+        'file' => 'ajaxlogin.signup.activation.email',
         'description' => '',
     ],
-    'tpl.signup.modal.success' => [
-        'file' => 'tpl.signup.modal.success',
+    'ajaxlogin.signup.modal.success' => [
+        'file' => 'ajaxlogin.signup.modal.success',
         'description' => '',
     ],
-    'tpl.forgot.form' => [
-        'file' => 'tpl.forgot.form',
+    'ajaxlogin.forgot.form' => [
+        'file' => 'ajaxlogin.forgot.form',
         'description' => '',
     ],
-    'tpl.forgot.email' => [
-        'file' => 'tpl.forgot.email',
+    'ajaxlogin.forgot.email' => [
+        'file' => 'ajaxlogin.forgot.email',
         'description' => '',
     ],
-    'tpl.forgot.modal.success' => [
-        'file' => 'tpl.forgot.modal.success',
+    'ajaxlogin.forgot.modal.success' => [
+        'file' => 'ajaxlogin.forgot.modal.success',
         'description' => '',
     ],
-    'tpl.modal.error' => [
-        'file' => 'tpl.modal.error',
+    'ajaxlogin.modal.error' => [
+        'file' => 'ajaxlogin.modal.error',
         'description' => '',
     ],
-    'tpl.ressetpass.expired' => [
-        'file' => 'tpl.ressetpass.expired',
+    'ajaxlogin.ressetpass.expired' => [
+        'file' => 'ajaxlogin.ressetpass.expired',
         'description' => '',
     ],
-    'tpl.profile.pwd_update.form' => [
-        'file' => 'tpl.profile.pwd_update.form',
+    'ajaxlogin.profile.pwd_update.form' => [
+        'file' => 'ajaxlogin.profile.pwd_update.form',
         'description' => '',
     ],
-    'tpl.profile.pwd_update.modal.success' => [
-        'file' => 'tpl.profile.pwd_update.modal.success',
+    'ajaxlogin.profile.pwd_update.modal.success' => [
+        'file' => 'ajaxlogin.profile.pwd_update.modal.success',
         'description' => '',
     ],
-    'tpl.profile.update.form' => [
-        'file' => 'tpl.profile.update.form',
+    'ajaxlogin.profile.update.form' => [
+        'file' => 'ajaxlogin.profile.update.form',
         'description' => '',
     ],
-    'tpl.profile.update.modal.success' => [
-        'file' => 'tpl.profile.update.modal.success',
+    'ajaxlogin.profile.update.modal.success' => [
+        'file' => 'ajaxlogin.profile.update.modal.success',
         'description' => '',
     ],
 ];

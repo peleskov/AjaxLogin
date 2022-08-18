@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    {include 'tpl.signup.modal.success'}
-    {include 'tpl.forgot.modal.success'}
-    {include 'tpl.modal.error'}
+    {include 'ajaxlogin.signup.modal.success'}
+    {include 'ajaxlogin.forgot.modal.success'}
+    {include 'ajaxlogin.modal.error'}
     <section class="mb-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -28,8 +28,8 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     {'!Login' | snippet : [
                     'tplType' => 'modChunk',
-                    'logoutTpl' => 'tpl.logout',
-                    'loginTpl' => 'tpl.login',
+                    'logoutTpl' => 'ajaxlogin.logout',
+                    'loginTpl' => 'ajaxlogin.login',
                     ]}
                 </div>
             </div>
@@ -48,8 +48,8 @@
                     'successMsg' => 'Password recovery instructions have been sent to your email.',
                     'errorMsg' => 'Email was not found in the database.',
                     'errorModalID' => 'errorModal',
-                    'form' => 'tpl.forgot.form',
-                    'emailTpl' => 'tpl.forgot.email',
+                    'form' => 'ajaxlogin.forgot.form',
+                    'emailTpl' => 'ajaxlogin.forgot.email',
                     'emailSubject' => 'Password recovery instructions'
                     ]}
                 </div>
@@ -63,14 +63,14 @@
                     {'!AjaxForm'|snippet:[
                     'snippet' => 'AjaxLogin',
                     'service' => 'signup',
-                    'form' => 'tpl.signup.form',
+                    'form' => 'ajaxlogin.signup.form',
                     'usernameField' => 'email',
                     'passwordField' => 'password',
                     'usergroups' => 'Users',
                     'activation' => 1,
                     'activationResourceId' => 15,
                     'activationEmailSubject' => 'Confirmation of registration',
-                    'activationEmailTpl' => 'tpl.signup.activation.email',
+                    'activationEmailTpl' => 'ajaxlogin.signup.activation.email',
                     'successMsg' => 'You have successfully registered.',
                     'errorMsg' => 'The form contains errors, please try again.',
                     'successModalID' => 'successSignupModal',
@@ -87,8 +87,8 @@
         </div>
     </section>
 
-    {include 'tpl.stylesheet'}
-    {include 'tpl.script'}
+    {include 'ajaxlogin.stylesheet'}
+    {include 'ajaxlogin.script'}
 </body>
 
 </html>
