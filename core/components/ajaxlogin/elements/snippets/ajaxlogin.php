@@ -81,24 +81,22 @@ switch ($service) {
         $scriptProperties['reloadOnSuccess'] = '0';
         $scriptProperties['redirectToLogin'] = '0';
         if (isset($_FILES['photo']) && !empty($_FILES['photo'])) { //update photo
-            if ($scriptProperties['avatarsDirPath'] != '') {
-                $ms_prop = $scriptProperties['avatarsDirPath'];
+            if ($scriptProperties['avatarsDirPath']) {
+                $ms_path = $scriptProperties['avatarsDirPath'];
             }
             else{
                 $ms_path = MODX_ASSETS_PATH . 'avatars/';
             }
-            $modx->log(1, $ms_path);
-            $dirPhoto = MODX_BASE_PATH . $ms_path . 'avatars/usr_'  . $modx->user->get('id');
-            if (!file_exists($dirPhoto)) mkdir($dirPhoto, 0755, true);
+            if (!file_exists($ms_path)) mkdir($ms_path, 0755, true);
             $extPhoto = mb_strtolower(pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION));
             if (
                 is_uploaded_file($_FILES['photo']['tmp_name'])
                 && !$_FILES['photo']['error']
                 && in_array($extPhoto, array('jpg', 'png', 'jpeg'))
             ) {
-                array_map("unlink", glob($dirPhoto . '/user' . $modx->user->get('id') . '_*')); //delete old user photo
+                array_map("unlink", glob($ms_path . 'user' . $modx->user->get('id') . '_*')); //delete old user photo
                 $newPhotoName = 'user' . $modx->user->get('id') . '_' . rand() . '.' . $extPhoto;
-                $newPhotoPath = $dirPhoto . '/' . $newPhotoName;
+                $newPhotoPath = $ms_path . $newPhotoName;
                 if (move_uploaded_file($_FILES['photo']['tmp_name'], $newPhotoPath)) {
                     require_once MODX_CORE_PATH . 'model/phpthumb/phpthumb.class.php';
                     $phpThumb = new phpThumb();
@@ -107,7 +105,7 @@ switch ($service) {
                     $phpThumb->setParameter('h', $thumbH);
                     $phpThumb->setParameter('zc', $thumbZC);
                     $phpThumb->setParameter('q', $thumbQ);
-                    $newPhoto = $ms_path . 'avatars/usr_' . $modx->user->get('id') . '/' . $newPhotoName;
+                    $newPhoto = str_replace(MODX_BASE_PATH, '', $newPhotoPath);
                     if ($phpThumb->GenerateThumbnail()) if ($phpThumb->RenderToFile($newPhotoPath)) $_FILES['photo'] = $newPhoto;
                 }
             }
@@ -126,7 +124,7 @@ switch ($service) {
                 if (in_array(str_replace($scriptProperties['placeholderPrefix'], '', $key), $fields)) $values[str_replace($scriptProperties['placeholderPrefix'], '', $key)] = $ph;
             }
             $array = array('result' => true, 'imageBlock' => $scriptProperties['imageBlock'], 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID'], 'submitVar' => $scriptProperties['submitVar']);
-            if ($newPhoto) $array['avatar'] = $newPhoto;
+            if ($newPhotoPath) $array['avatar'] = $newPhoto;
             return $AjaxForm->error($placeholders['error.message'], $array);
         }
         break;
