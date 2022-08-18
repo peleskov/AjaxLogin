@@ -49,10 +49,6 @@ return [
         'file' => 'tpl.modal.error',
         'description' => '',
     ],
-    'tpl.ressetpass' => [
-        'file' => 'tpl.ressetpass',
-        'description' => '',
-    ],
     'tpl.ressetpass.expired' => [
         'file' => 'tpl.ressetpass.expired',
         'description' => '',
