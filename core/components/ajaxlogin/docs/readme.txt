@@ -18,3 +18,6 @@ Login + Ajax Extra for MODx Revolution.
     - activationResourceId
 3 В чанке tpl.login указать верный id страницы
     - redirectID
+
+4 Закоментировать строку в ../core/components/login/controllers/web/Login.php
+    //$this->modx->sendRedirect($this->modx->getOption('site_url'));
