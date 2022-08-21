@@ -14,7 +14,7 @@
         },
 
         eventAfComplete: function (event, response) {
-            if (response.data.service == 'ajaxlogin') {
+            if ('service' in response.data && response.data.service == 'ajaxlogin') {
                 this.cleanDOM(response)
                 this.offLibraries(response)
                 this.getService(response)
@@ -60,7 +60,12 @@
                     response.form.find('[name="' + i + '"]')
                         .addClass('is-invalid')
                         .after($('<span class="invalid-feedback">' + msg + '</span>'))
-                });
+                    if (response.form.attr('id')) {
+                        $('body').find('[form="' + response.form.attr('id') + '"][name="' + i + '"]')
+                            .addClass('is-invalid')
+                            .after($('<span class="invalid-feedback">' + msg + '</span>'))
+                    }
+                })
             }
             if (modalID) {
                 $('.modal').modal('hide')
