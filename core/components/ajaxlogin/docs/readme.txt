@@ -3,7 +3,7 @@ AjaxLogin
 --------------------
 Authors:
     Sergei Peleskov <info@s1temaker.ru>
-    Artem Ujakov <>
+    Artem Ujakov <artem-uzhakov@mail.ru>
 --------------------
 
 Login + Ajax Extra for MODx Revolution.
