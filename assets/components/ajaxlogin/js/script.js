@@ -8,10 +8,10 @@ $(document).ready(() => {
     /*ON/OFF Show password*/
     $('.btn-pwdshow').on('click', (el) => {
         $(el.currentTarget).toggleClass('show')
-        if ($(el.currentTarget).prev().attr('type') == 'password') {
-            $(el.currentTarget).prev().attr('type', 'text');
+        if ($(el.currentTarget).parent().find('input').attr('type') == 'password') {
+            $(el.currentTarget).parent().find('input').attr('type', 'text');
         } else {
-            $(el.currentTarget).prev().attr('type', 'password');
+            $(el.currentTarget).parent().find('input').attr('type', 'password');
         }
 
     });

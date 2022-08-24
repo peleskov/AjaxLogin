@@ -76,7 +76,7 @@
                     'successModalID' => 'successSignupModal',
                     'errorModalID' => 'errorModal',
                     'validate' => 'nospam:blank,
-                    fullname:required:minLength=^3^,
+                    fullname:required:minLength=^5^,
                     email:required:email,
                     mobilephone:required,
                     password:required:minLength=^8^,
