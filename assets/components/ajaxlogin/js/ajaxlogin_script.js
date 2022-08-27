@@ -23,9 +23,9 @@
 
         cleanDOM: function (response) {
 
-            $(response.form).find('.is-invalid').removeClass('is-invalid')
-            $(response.form).find('.invalid-feedback').remove()
-            $(response.form).find('.alert').hide()
+            $('.is-invalid').removeClass('is-invalid')
+            $('.invalid-feedback').remove()
+            $('.alert').hide()
 
         },
 
