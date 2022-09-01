@@ -21,3 +21,5 @@ Login + Ajax Extra for MODx Revolution.
 
 4 Закоментировать строку в ../core/components/login/controllers/web/Login.php
     //$this->modx->sendRedirect($this->modx->getOption('site_url'));
+
+5 Создать группу пользователей Users
