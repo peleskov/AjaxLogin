@@ -19,7 +19,7 @@ switch ($service) {
             Закоментировать строку в ../core/components/login/controllers/web/Login.php
             //$this->modx->sendRedirect($this->modx->getOption('site_url'));
         */
-        $modx->runSnippet('Login');
+        $modx->runSnippet('Login', $scriptProperties);
         foreach ($modx->placeholders as $key => $ph) {
             if (strpos($key, 'errors') === 0) $placeholders[$key] = $ph;
         }
@@ -58,6 +58,7 @@ switch ($service) {
         break;
     case 'changepass':
         if (empty($scriptProperties['placeholderPrefix'])) $scriptProperties['placeholderPrefix'] = 'cp.';
+        $redirectID = $modx->getOption('redirectID', $scriptProperties, 1);
         $scriptProperties['reloadOnSuccess'] = '0';
         $scriptProperties['successMessage'] = '1';
         $modx->runSnippet('ChangePassword', $scriptProperties);
@@ -70,7 +71,7 @@ switch ($service) {
             }
             return $AjaxForm->error('', array('service' => 'ajaxlogin', 'result' => false, 'message' => $scriptProperties['errorMsg'], 'modalID' => $scriptProperties['errorModalID'], 'errors' => $errors));
         } else { //SUCCESS
-            return $AjaxForm->success('', array('service' => 'ajaxlogin', 'result' => true, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID'], 'submitVar' => $scriptProperties['submitVar']));
+            return $AjaxForm->success('', array('service' => 'ajaxlogin', 'result' => true, 'message' => $scriptProperties['successMsg'], 'modalID' => $scriptProperties['successModalID'], 'submitVar' => $scriptProperties['submitVar'], 'location' => $modx->makeUrl($redirectID)));
         }
         break;
     case 'updateprof':
