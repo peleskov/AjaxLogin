@@ -1,4 +1,9 @@
 <?php
+// Откликаться будет ТОЛЬКО на ajax запросы
+if (empty($_SERVER['HTTP_X_REQUESTED_WITH']) || $_SERVER['HTTP_X_REQUESTED_WITH'] != 'XMLHttpRequest') {
+    return;
+}
+
 switch ($service) {
     case 'signup':
         if (empty($scriptProperties['placeholderPrefix'])) $scriptProperties['placeholderPrefix'] = 'su.';
@@ -19,7 +24,7 @@ switch ($service) {
             Закоментировать строку в ../core/components/login/controllers/web/Login.php
             //$this->modx->sendRedirect($this->modx->getOption('site_url'));
         */
-        $modx->runSnippet('Login', $scriptProperties);
+        $modx->runSnippet('Login');
         foreach ($modx->placeholders as $key => $ph) {
             if (strpos($key, 'errors') === 0) $placeholders[$key] = $ph;
         }

@@ -1,5 +1,13 @@
 Changelog for AjaxLogin.
 
+1.0.5
+==============
+- Убрал ошибку в Login htmlspecialchars(), в $modx->runSnippet('Login') не нужно передавать $scriptProperties
+
+1.0.4
+==============
+- Сниппет AjaxLogin будет откликаться только на Ajax запросы
+
 1.0.3
 ==============
 - Исправлено авторизация во все контексты
